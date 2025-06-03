@@ -1,0 +1,289 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #1a202c, #2d3748);
+  color: #f7fafc;
+}
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+}
+.hero-bg {
+  background: url('https://images.unsplash.com/photo-1542751371-adc38448a05e') no-repeat center center/cover;
+  filter: brightness(0.7);
+  position: relative;
+  overflow: hidden;
+}
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+.section-bg {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+.player-card {
+  perspective: 1000px;
+  width: 300px;
+  height: 400px;
+  cursor: pointer;
+}
+.player-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.player-card.flipped .player-card-inner {
+  transform: rotateY(180deg);
+}
+.player-front, .player-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.player-front {
+  background: linear-gradient(135deg, #e53e3e, #b83280);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #f6e05e;
+}
+.player-back {
+  background: linear-gradient(135deg, #2d3748, #1a202c);
+  transform: rotateY(180deg);
+  padding: 1.5rem;
+  text-align: center;
+  border: 2px solid #f6e05e;
+}
+.player-card:hover .player-card-inner {
+  box-shadow: 0 10px 20px rgba(229, 62, 62, 0.5);
+  transform: translateY(-5px) rotateY(5deg);
+}
+.player-card.flipped:hover .player-card-inner {
+  transform: rotateY(180deg); /* Prevent hover effect on back */
+}
+.player-card.hidden {
+  display: none;
+}
+.player-close-btn {
+  background: #2d3748;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.player-close-btn:hover {
+  background: #4a5568;
+}
+.slogan {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f7fafc;
+  background: linear-gradient(135deg, #e53e3e, #b83280);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(229, 62, 62, 0.5);
+  animation: fadeIn 1s ease-in-out;
+  display: inline-block;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 768px) {
+  .slogan {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+.animate-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.animate-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.countdown {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+}
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.7); }
+  50% { transform: scale(1.05); box-shadow: 0 0 15px 5px rgba(229, 62, 62, 0.5); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.7); }
+}
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+.match-history {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.match-history.active {
+  display: block;
+  opacity: 1;
+}
+.match-alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #e53e3e;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 100;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+.match-alert.active {
+  display: block;
+}
+.match-alert button {
+  margin-top: 15px;
+  background: #2d3748;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.match-alert button:hover {
+  background: #4a5568;
+}
+.badge {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 2rem;
+}
+.player-spotlight {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #2d3748, #1a202c);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 100;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  border: 2px solid #f6e05e;
+}
+.player-spotlight.active {
+  display: block;
+}
+.player-spotlight button {
+  margin-top: 15px;
+  background: #e53e3e;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.player-spotlight button:hover {
+  background: #b83280;
+}
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #f6e05e;
+  transform: translateX(-50%);
+}
+.timeline-item {
+  position: relative;
+  margin: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-left: 20px;
+  margin-right: 50%;
+}
+.timeline-item:nth-child(even) .timeline-content {
+  margin-right: 20px;
+  margin-left: 50%;
+  text-align: right;
+}
+.timeline-content {
+  background: #2d3748;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #e53e3e;
+  width: 40%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.timeline-content:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(229, 62, 62, 0.5);
+}
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  background: #e53e3e;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.timeline-date {
+  color: #f6e05e;
+  font-weight: bold;
+}
+.scoreboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.scoreboard-table th, .scoreboard-table td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #4a5568;
+}
+.scoreboard-table th {
+  background: #e53e3e;
+  color: #f7fafc;
+  font-weight: bold;
+}
+.scoreboard-table td {
+  background: #1a202c;
+  color: #d1d5db;
+}
+.scoreboard-table tr:hover td {
+  background: #2d3748;
+}

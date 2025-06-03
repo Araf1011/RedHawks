@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official website of RedHawks, a Free Fire esports team from Bangladesh. Join our journey to dominate the battlefield!">
+  <meta name="keywords" content="RedHawks, Free Fire, esports, Bangladesh, gaming">
+  <meta name="author" content="RedHawks Team">
+  <title>RedHawks - Free Fire Esports Team</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full bg-gray-900 bg-opacity-90 shadow-lg z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold text-red-600">RedHawks</div>
+      <ul class="flex space-x-6">
+        <li><a href="#home" class="hover:text-red-500 transition">Home</a></li>
+        <li><a href="#about" class="hover:text-red-500 transition">About</a></li>
+        <li><a href="#team" class="hover:text-red-500 transition">Team</a></li>
+        <li><a href="#matches" class="hover:text-red-500 transition">Matches</a></li>
+        <li><a href="#timeline" class="hover:text-red-500 transition">Timeline</a></li>
+        <li><a href="#tournaments" class="hover:text-red-500 transition">Tournaments</a></li>
+        <li><a href="#media" class="hover:text-red-500 transition">Media</a></li>
+        <li><a href="#contact" class="hover:text-red-500 transition">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-bg h-screen flex items-center justify-center text-center">
+    <div id="particles-js"></div>
+    <div class="hero-content">
+      <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">RedHawks</h1>
+      <p class="slogan">We Believe in Domination</p>
+      <p class="text-xl md:text-2xl text-gray-200 mb-4">Soaring to Victory in Free Fire | Bangladesh's Finest</p>
+      <a href="#about" class="bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition pulse-animation mt-6">Discover Our Journey</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 section-bg animate-scroll">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-red-600 mb-8">About RedHawks</h2>
+      <p class="text-lg text-gray-300 text-center max-w-3xl mx-auto">
+        RedHawks is a premier Free Fire esports team from Bangladesh, born from a passion for gaming and a drive to dominate the battlefield.
+        Founded in 2025, we represent the spirit of Bangladesh, blending skill, strategy, and teamwork to compete at the highest levels.
+        Join us as we aim for global glory!
+      </p>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="py-16 animate-scroll">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-red-600 mb-8">Meet the RedHawks</h2>
+      <div class="flex justify-center space-x-4 mb-8">
+        <button onclick="filterPlayers('all')" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">All</button>
+        <button onclick="filterPlayers('rusher')" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">Rusher</button>
+        <button onclick="filterPlayers('sniper')" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">Sniper</button>
+        <button onclick="filterPlayers('support')" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">Support</button>
+        <button onclick="filterPlayers('igl')" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">IGL</button>
+        <button onclick="filterPlayers('fragger')" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">Fragger</button>
+      </div>
+      <div class="flex overflow-x-auto space-x-4 pb-4" id="player-list">
+        <div class="player-card flex-shrink-0" data-role="rusher" onclick="toggleFlip('player1', event)">
+          <div class="player-card-inner" id="player1">
+            <div class="player-front">
+              <h3 class="text-2xl font-bold text-white">RHK-Blade</h3>
+            </div>
+            <div class="player-back">
+              <img src="https://images.unsplash.com/photo-1598550874175-4d0ef436c577" alt="RHK-Blade" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500">
+              <h3 class="text-xl font-bold text-white">RHK-Blade</h3>
+              <p class="text-gray-200">Role: Rusher | Fav Weapon: M1019</p>
+              <p class="text-gray-300 mt-2">Leading the charge with fearless aggression.</p>
+              <div class="mt-4 flex justify-center space-x-4">
+                <a href="https://x.com" target="_blank" class="text-white hover:text-red-300"><i class="fab fa-x-twitter text-2xl"></i></a>
+                <a href="https://www.youtube.com/@Blade_On_Top" target="_blank" class="text-white hover:text-red-300"><i class="fab fa-youtube text-2xl"></i></a>
+              </div>
+              <button class="player-close-btn" onclick="toggleFlip('player1', event)">Close</button>
+            </div>
+          </div>
+        </div>
+        <div class="player-card flex-shrink-0" data-role="sniper" onclick="toggleFlip('player2', event)">
+          <div class="player-card-inner" id="player2">
+            <div class="player-front">
+              <h3 class="text-2xl font-bold text-white">RHK-Flicker</h3>
+            </div>
+            <div class="player-back">
+              <img src="Flicker.jpg" alt="RHK-Flicker" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500">
+              <h3 class="text-xl font-bold text-white">RHK-Flicker</h3>
+              <p class="text-gray-200">Role: Sniper | Fav Weapon: AWM/M82B</p>
+              <p class="text-gray-300 mt-2">Precision and patience define this sharpshooter.</p>
+              <div class="mt-4 flex justify-center space-x-4">
+                <a href="https://x.com" target="_blank" class="text-white hover:text-red-300"><i class="fab fa-x-twitter text-2xl"></i></a>
+                <a href="https://www.youtube.com/@Flickerz7" target="_blank" class="text-white hover:text-red-300"><i class="fab fa-youtube text-2xl"></i></a>
+              </div>
+              <button class="player-close-btn" onclick="toggleFlip('player2', event)">Close</button>
+            </div>
+          </div>
+        </div>
+        <div class="player-card flex-shrink-0" data-role="support" onclick="toggleFlip('player3', event)">
+          <div class="player-card-inner" id="player3">
+            <div class="player-front">
+              <h3 class="text-2xl font-bold text-white">RHK-Kuttush</h3>
+            </div>
+            <div class="player-back">
+              <img src="Kuttush.jpg" alt="RHK-Kuttush" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500">
+              <h3 class="text-xl font-bold text-white">RHK-Kuttush</h3>
+              <p class="text-gray-200">Role: Support | Fav Weapon: M1014</p>
+              <p class="text-gray-300 mt-2">The backbone of the team, always clutch.</p>
+              <div class="mt-4 flex justify-center space-x-4">
+                <a href="https://x.com" target="_blank" class="text-white hover:text-red-300"><i class="fab fa-x-twitter text-2xl"></i></a>
+                <a href="https://www.youtube.com/@KUTTUSHFF" target="_blank" class="text-white hover:text-red-300"><i class="fab fa-youtube text-2xl"></i></a>
+              </div>
+              <button class="player-close-btn" onclick="toggleFlip('player3', event)">Close</button>
+            </div>
+          </div>
+        </div>
+        <div class="player-card flex-shrink-0" data-role="igl" onclick="toggleFlip('player4', event)">
+          <div class="player-card-inner" id="player4">
+            <div class="player-front">
+              <h3 class="text-2xl font-bold text-white">RHK-Nejad</h3>
+            </div>
+            <div class="player-back">
+              <img src="Nejad.jpg" alt="RHK-Nejad" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500">
+              <h3 class="text-xl font-bold text-white">RHK-Nejad</h3>
+              <p class="text-gray-200">Role: IGL + Nader | Fav Weapon: M79</p>
+              <p class="text-gray-300 mt-2">Master strategist calling the shots.</p>
+              <div class="mt-4 flex justify-center space-x-4">
+                <a href="https://x.com" target="_blank" class="text-white hover:text-red-300"><i class="fab fa-x-twitter text-2xl"></i></a>
+                <a href="https://www.youtube.com/@RHKNejad" target="_blank" class="text-white hover:text-red-300"><i class="fab fa-youtube text-2xl"></i></a>
+              </div>
+              <button class="player-close-btn" onclick="toggleFlip('player4', event)">Close</button>
+            </div>
+          </div>
+        </div>
+        <div class="player-card flex-shrink-0" data-role="fragger" onclick="toggleFlip('player5', event)">
+          <div class="player-card-inner" id="player5">
+            <div class="player-front">
+              <h3 class="text-2xl font-bold text-white">RHK-Kaafi</h3>
+            </div>
+            <div class="player-back">
+              <img src="Kaafi.jpg" alt="RHK-Kaafi" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500">
+              <h3 class="text-xl font-bold text-white">RHK-Kaafi</h3>
+              <p class="text-gray-200">Role: Fragger | Fav Weapon: SCAR</p>
+              <p class="text-gray-300 mt-2">Unpredictable and deadly in every fight.</p>
+              <div class="mt-4 flex justify-center space-x-4">
+                <a href="https://x.com" target="_blank" class="text-white hover:text-red-300"><i class="fab fa-x-twitter text-2xl"></i></a>
+                <a href="https://www.youtube.com/@RHKKaafi" target="_blank" class="text-white hover:text-red-300"><i class="fab fa-youtube text-2xl"></i></a>
+              </div>
+              <button class="player-close-btn" onclick="toggleFlip('player5', event)">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Matches Section -->
+  <section id="matches" class="py-16 section-bg animate-scroll">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-red-600 mb-8">Upcoming Matches</h2>
+      <div class="mb-12 text-center">
+        <h3 class="text-2xl font-bold text-white">Next Match Countdown</h3>
+        <p class="text-gray-300 mb-4">RedHawks vs. FireStorm | Free Fire Bangladesh League</p>
+        <div id="countdown" class="countdown text-3xl text-red-500"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-800 p-6 rounded-lg hover-scale">
+          <h3 class="text-xl font-bold">Free Fire Bangladesh League</h3>
+          <p class="text-gray-400">Opponent: FireStorm</p>
+          <p class="text-gray-400">Date: June 10, 2025, 8:00 PM</p>
+          <p class="text-gray-300">Live on YouTube and Twitch</p>
+          <div class="mt-4">
+            <a href="https://www.youtube.com/live" target="_blank" class="text-white hover:text-red-300">
+              <i class="fab fa-youtube text-2xl mr-2"></i>Watch Live on YouTube
+            </a>
+          </div>
+          <div class="mt-2">
+            <a href="https://www.twitch.tv" target="_blank" class="text-white hover:text-red-300">
+              <i class="fab fa-twitch text-2xl mr-2"></i>Watch Live on Twitch
+            </a>
+          </div>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg hover-scale">
+          <h3 class="text-xl font-bold">Free Fire Regional Qualifiers</h3>
+          <p class="text-gray-400">Opponent: TBD</p>
+          <p class="text-gray-400">Date: June 15, 2025, 6:00 PM</p>
+          <p class="text-gray-300">Streaming details coming soon!</p>
+          <div class="mt-4">
+            <a href="https://www.youtube.com/live" target="_blank" class="text-white hover:text-red-300">
+              <i class="fab fa-youtube text-2xl mr-2"></i>Watch Live on YouTube
+            </a>
+          </div>
+          <div class="mt-2">
+            <a href="https://www.twitch.tv" target="_blank" class="text-white hover:text-red-300">
+              <i class="fab fa-twitch text-2xl mr-2"></i>Watch Live on Twitch
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Timeline Section -->
+  <section id="timeline" class="py-16 section-bg animate-scroll">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-red-600 mb-8">Our Journey</h2>
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <p class="timeline-date">January 2025</p>
+            <h3 class="text-lg font-bold">Team Founded</h3>
+            <p class="text-gray-300">RedHawks was born in Bangladesh, uniting top Free Fire talents.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <p class="timeline-date">March 2025</p>
+            <h3 class="text-lg font-bold">First Tournament Win</h3>
+            <p class="text-gray-300">Secured victory in the Free Fire Dhaka Open, marking our rise.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <p class="timeline-date">March 2025</p>
+            <h3 class="text-lg font-bold">Kuttush Join</h3>
+            <p class="text-gray-300">Star supporter Kuttush joins, boosting team aggression.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <p class="timeline-date">June 2025</p>
+            <h3 class="text-lg font-bold">World Series Qualification</h3>
+            <p class="text-gray-300">Qualified for Free Fire World Series 2025, aiming for global glory.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tournaments Section -->
+  <section id="tournaments" class="py-16 animate-scroll">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-red-600 mb-8">Tournaments & Achievements</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-800 p-6 rounded-lg hover-scale">
+          <h3 class="text-xl font-bold">Free Fire Bangladesh Championship 2025 Split 1</h3>
+          <p class="text-gray-400">Rank: 1st Place</p>
+          <p class="text-gray-300">Fought fiercely against top teams, securing a podium finish!</p>
+          <div class="badge"><i class="fas fa-medal text-yellow-500"></i></div>
+          <button onclick="toggleMatchHistory('match-history-1')" class="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">View Match History</button>
+          <div id="match-history-1" class="match-history mt-4 text-gray-300">
+            <table class="scoreboard-table">
+              <thead>
+                <tr>
+                  <th>Match</th>
+                  <th>Map</th>
+                  <th>Finish Points</th>
+                  <th>Placement Points</th>
+                  <th>Total Points</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Bermuda</td>
+                  <td>18</td>
+                  <td>12 (1st)</td>
+                  <td>30</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Kalahari</td>
+                  <td>12</td>
+                  <td>8 (3rd)</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Purgatory</td>
+                  <td>18</td>
+                  <td>12 (1st)</td>
+                  <td>30</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg hover-scale">
+          <h3 class="text-xl font-bold">Free Fire World Series 2025</h3>
+          <p class="text-gray-400">Status: Qualified</p>
+          <p class="text-gray-300">Ready to take on the global stage!</p>
+          <div class="badge"><i class="fas fa-trophy text-green-500"></i></div>
+          <button onclick="toggleMatchHistory('match-history-2')" class="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition">View Match History</button>
+          <div id="match-history-2" class="match-history mt-4 text-gray-300">
+            <table class="scoreboard-table">
+              <thead>
+                <tr>
+                  <th>Match</th>
+                  <th>Map</th>
+                  <th>Finish Points</th>
+                  <th>Placement Points</th>
+                  <th>Total Points</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Bermuda</td>
+                  <td>16</td>
+                  <td>12 (1st)</td>
+                  <td>28</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Kalahari</td>
+                  <td>14</td>
+                  <td>9 (2nd)</td>
+                  <td>23</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Purgatory</td>
+                  <td>17</td>
+                  <td>8 (3rd)</td>
+                  <td>25</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Bermuda</td>
+                  <td>13</td>
+                  <td>12 (1st)</td>
+                  <td>25</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Kalahari</td>
+                  <td>10</td>
+                  <td>6 (5th)</td>
+                  <td>16</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Purgatory</td>
+                  <td>15</td>
+                  <td>9 (2nd)</td>
+                  <td>24</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Media Section -->
+  <section id="media" class="py-16 section-bg animate-scroll">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-red-600 mb-8">Media Highlights</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="hover-scale">
+          <iframe class="w-full h-64 rounded-lg" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+          <p class="text-gray-300 mt-2">Epic 1v4 Clutch by RaptorX</p>
+        </div>
+        <div class="hover-scale">
+          <iframe class="w-full h-64 rounded-lg" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+          <p class="text-gray-300 mt-2">RedHawks Team Highlights 2025</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 section-bg animate-scroll">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center text-red-600 mb-8">Get in Touch</h2>
+      <div class="max-w-lg mx-auto">
+        <div id="contact-form" class="space-y-4">
+          <input type="text" id="name" placeholder="Your Name" class="w-full p-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+          <input type="email" id="email" placeholder="Your Email" class="w-full p-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+          <textarea id="message" placeholder="Your Message" rows="5" class="w-full p-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
+          <button type="submit" class="w-full bg-red-600 text-white p-3 rounded-lg hover:bg-red-700 transition">Send Message</button>
+        </div>
+        <p id="form-response" class="text-center text-gray-300 mt-4"></p>
+      </div>
+      <div class="flex justify-center space-x-6 mt-8">
+        <a href="https://x.com" target="_blank" class="text-2xl text-red-500 hover:text-red-600"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://discord.gg" target="_blank" class="text-2xl text-red-500 hover:text-red-600"><i class="fab fa-discord"></i></a>
+        <a href="https://youtube.com" target="_blank" class="text-2xl text-red-500 hover:text-red-600"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-6 text-center">
+    <p class="text-gray-400">© 2025 RedHawks Esports. All rights reserved.</p>
+  </footer>
+
+  <!-- Match Alert -->
+  <div id="match-alert" class="match-alert">
+    <h3 id="alert-title" class="text-xl font-bold">Match Update</h3>
+    <p id="alert-message"></p>
+    <p id="alert-details"></p>
+    <button onclick="closeAlert()">Close</button>
+  </div>
+
+  <!-- Player Spotlight -->
+  <div id="player-spotlight" class="player-spotlight">
+    <h3 class="text-xl font-bold">Player of the Month</h3>
+    <img src="Kuttush.jpg" alt="RHK-Kuttush" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500">
+    <p class="text-lg font-bold">RHK-Kuttush</p>
+    <p class="text-gray-200">Role: Supporter | Kills: 245 | Win Rate: 68%</p>
+    <p class="text-gray-300 mt-2">Leading the charge with fearless aggression, RaptorX dominated in June 2025!</p>
+    <button onclick="closeSpotlight()">Close</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
