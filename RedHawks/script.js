@@ -54,47 +54,28 @@ function filterPlayers(role) {
 function closeAlert() {
   const alertElement = document.getElementById('match-alert');
   alertElement.classList.remove('active');
+  clearTimeout(alertElement.timeoutId); // Clear any existing timeout
 }
 
 // Countdown Timer for Next Match and Enhanced Alert
 function startCountdown() {
-  const matchDate = new Date('2025-06-10T20:00:00+06:00').getTime();
+  const matchDate = new Date('2025-06-20T16:30:00+06:00').getTime();
   const countdownElement = document.getElementById('countdown');
   const alertElement = document.getElementById('match-alert');
   const alertTitle = document.getElementById('alert-title');
   const alertMessage = document.getElementById('alert-message');
   const alertDetails = document.getElementById('alert-details');
 
-  const recentMatches = [
-    {
-      tournament: "Free Fire Bangladesh Championship 2025",
-      opponent: "EliteSquad",
-      result: "Won 18-13",
-      map: "Purgatory",
-      date: "June 01, 2025",
-      highlight: "RaptorX's clutch 1v3 sealed the victory!"
-    },
-    {
-      tournament: "Free Fire World Series 2025",
-      opponent: "WildFire",
-      result: "Won 17-12",
-      map: "Purgatory",
-      date: "May 30, 2025",
-      highlight: "ThunderHawk's strategy shone through!"
-    }
-  ];
+ 
 
   function updateCountdown() {
     const now = new Date().getTime();
     const distance = matchDate - now;
 
     if (distance <= 0) {
-      countdownElement.textContent = 'Match is Live!';
-      alertTitle.textContent = 'Match Update: Live Now!';
-      alertMessage.textContent = 'RedHawks vs. FireStorm is LIVE!';
-      alertDetails.textContent = 'Tournament: Free Fire Bangladesh League | Date: June 10, 2025, 8:00 PM | Watch on YouTube & Twitch';
-      alertElement.classList.add('active');
-      setTimeout(closeAlert, 7000);
+      countdownElement.textContent = 'Match Started!';
+      alertTitle.textContent = 'Match Alert: Live Now!';
+      alertElement.classList.remove('active');
       return;
     }
 
@@ -108,16 +89,28 @@ function startCountdown() {
     if (distance <= 300000 && distance > 0) {
       const recentMatch = recentMatches[0];
       alertTitle.textContent = 'Match Alert: Coming Soon!';
-      alertMessage.textContent = 'RedHawks vs. FireStorm starts in 5 minutes!';
-      alertDetails.textContent = `Recent Match: ${recentMatch.tournament} | ${recentMatch.opponent} ${recentMatch.result} on ${recentMatch.map} (${recentMatch.date}) - ${recentMatch.highlight}`;
+      alertMessage.textContent = 'starts in 5 minutes!';
+    
       alertElement.classList.add('active');
-      setTimeout(closeAlert, 7000);
+      alertElement.timeoutId = setTimeout(closeAlert, 7000);
     }
   }
 
   updateCountdown();
   setInterval(updateCountdown, 1000);
 }
+
+// Player Stats Highlight Interaction
+document.querySelectorAll('.player-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const playerRole = card.getAttribute('data-role');
+    const statsCards = document.querySelectorAll('.stats-card');
+    statsCards.forEach(statCard => {
+      statCard.style.display = statCard.getAttribute('data-player') === playerRole ? 'block' : 'none';
+    });
+  });
+});
+
 startCountdown();
 
 // Particles.js for Dynamic Background
@@ -234,6 +227,15 @@ function toggleMatchHistory(matchId) {
   }
 }
 
+// Append to script.js, at the end of the file
+let carouselIndex = 0;
+function moveCarousel(direction) {
+  const items = document.querySelectorAll('.carousel-item');
+  carouselIndex = (carouselIndex + direction + items.length) % items.length;
+  document.getElementById('carousel-inner').style.transform = `translateX(-${carouselIndex * 100}%)`;
+}
+setInterval(() => moveCarousel(1), 5000);
+
 // Player Spotlight
 function closeSpotlight() {
   const spotlight = document.getElementById('player-spotlight');
@@ -243,4 +245,17 @@ window.addEventListener('load', function() {
   const spotlight = document.getElementById('player-spotlight');
   spotlight.classList.add('active');
   setTimeout(closeSpotlight, 7000);
+});
+
+// Add event listener for player card close buttons
+document.querySelectorAll('.player-close-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    const spotlight = this.closest('.player-spotlight');
+    if (spotlight) {
+      spotlight.classList.remove('active');
+    } else {
+      const card = this.closest('.player-card');
+      if (card) card.classList.remove('flipped');
+    }
+  });
 });
