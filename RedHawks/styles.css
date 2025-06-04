@@ -71,7 +71,7 @@ h1, h2, h3 {
   transform: translateY(-5px) rotateY(5deg);
 }
 .player-card.flipped:hover .player-card-inner {
-  transform: rotateY(180deg); /* Prevent hover effect on back */
+  transform: rotateY(180deg);
 }
 .player-card.hidden {
   display: none;
@@ -286,4 +286,115 @@ h1, h2, h3 {
 }
 .scoreboard-table tr:hover td {
   background: #2d3748;
+}
+
+/* Upcoming Matches Section */
+/* Upcoming Matches Section */
+.matches-section {
+  background: linear-gradient(rgba(26, 32, 44, 0.9), rgba(45, 55, 72, 0.9)), url('https://images.unsplash.com/photo-1614850523060-8da1d56ae167') no-repeat center center/cover;
+  position: relative;
+  overflow: hidden;
+}
+.matches-title {
+  text-shadow: 0 0 10px rgba(229, 62, 62, 0.7);
+  animation: fadeIn 1s ease-in-out;
+}
+.countdown-container {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 20px rgba(229, 62, 62, 0.3);
+}
+.countdown-title {
+  font-family: 'Orbitron', sans-serif;
+  color: #f6e05e;
+  text-shadow: 0 0 5px rgba(246, 224, 94, 0.5);
+}
+.countdown-info {
+  font-size: 1.1rem;
+}
+.countdown-display {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #e53e3e, #b83280);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(229, 62, 62, 0.5);
+  animation: pulse 2s infinite;
+}
+.match-grid {
+  margin-top: 2rem;
+}
+.match-card {
+  border: 2px solid transparent;
+  background: linear-gradient(#1a202c, #1a202c) padding-box, linear-gradient(135deg, #e53e3e, #f6e05e) border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.match-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(229, 62, 62, 0.5);
+}
+.match-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.match-status {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+}
+.match-details p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+.match-links a {
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .stats-card {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 640px) {
+  .stats-card h4 {
+    font-size: 1.1rem;
+  }
+  .stats-card p {
+    font-size: 0.9rem;
+  }
+}
+
+.carousel {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+.carousel-inner {
+  display: flex;
+}
+.carousel-item {
+  transition: opacity 0.5s ease;
+}
+.carousel-prev, .carousel-next {
+  transition: background 0.3s ease;
+}
+.carousel-prev:hover, .carousel-next:hover {
+  background: #b83280;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .carousel-item iframe {
+    height: 200px;
+  }
+  .carousel-prev, .carousel-next {
+    padding: 0.5rem;
+  }
 }
