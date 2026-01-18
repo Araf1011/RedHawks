@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topu - CSE Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+
+<body>
+
+    <!-- Particle Canvas Background -->
+    <canvas id="particleCanvas"></canvas>
+
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+
+    <header class="header">
+        <a href="#" class="logo">Topu.</a>
+
+        <div class="bx bx-menu" id="menu-icon"><i class="fas fa-bars"></i></div>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#timeline">Journey</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h1>Meheraz Hossain Topu</h1>
+            <h3>And I'm a <span class="multiple-text"></span></h3>
+            <p>A passionate 4th-semester CSE student crafting digital experiences with code. I blend creativity with
+                logic to build functional and beautiful web solutions.</p>
+            <div class="social-media">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <a href="#contact" class="btn">Let's Talk</a>
+        </div>
+
+        <div class="home-img">
+            <div class="img-box">
+                <img src="assets/topu.png" alt="Profile Picture">
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="assets/topu.png" alt="Profile Picture">
+        </div>
+
+
+        <div class="about-content">
+            <h2 class="heading">My <span>Journey</span></h2>
+
+            <!-- Animated Stats -->
+            <div class="stats-grid">
+                <div class="stat-card magnetic">
+                    <i class="fas fa-graduation-cap"></i>
+                    <div class="stat-number" data-target="3.99">0</div>
+                    <p>Current CGPA</p>
+                </div>
+                <div class="stat-card magnetic">
+                    <i class="fas fa-project-diagram"></i>
+                    <div class="stat-number" data-target="15">0</div>
+                    <p>Projects Built</p>
+                </div>
+                <div class="stat-card magnetic">
+                    <i class="fas fa-code"></i>
+                    <div class="stat-number" data-target="500">0</div>
+                    <p>Hours Coding</p>
+                </div>
+            </div>
+
+            <!-- Interactive Timeline -->
+            <div class="journey-timeline">
+                <div class="timeline-card magnetic" data-tilt>
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-content-box">
+                        <h3><i class="fas fa-school"></i> The Beginning</h3>
+                        <p>Discovered my passion for programming during high school. Started with C and fell in love
+                            with problem-solving.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-card magnetic" data-tilt>
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content-box">
+                        <h3><i class="fas fa-university"></i> University Journey</h3>
+                        <p>Enrolled in <strong>Computer Science & Engineering</strong> at International Islamic
+                            University Chittagong. Dove deep into Data Structures and Algorithms.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-card magnetic" data-tilt>
+                    <div class="timeline-year">2027</div>
+                    <div class="timeline-content-box">
+                        <h3><i class="fas fa-laptop-code"></i> Full-Stack Developer</h3>
+                        <p>Will Master modern web technologies. Built responsive UIs with
+                            <strong>HTML/CSS/JavaScript</strong> and explored backend development with
+                            <strong>Python</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-card magnetic" data-tilt>
+                    <div class="timeline-year">Now</div>
+                    <div class="timeline-content-box">
+                        <h3><i class="fas fa-rocket"></i> Building the Future</h3>
+                        <p>Focused on creating high-performance solutions with clean architecture. Open to opportunities
+                            and collaborations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 class="heading">Technical <span>Arsenal</span></h2>
+        <p class="section-subtitle">Technologies I work with</p>
+
+        <div class="skills-grid">
+            <!-- HTML5 -->
+            <div class="skill-box" data-skill="html">
+                <div class="skill-icon">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <h3>HTML5</h3>
+                <div class="skill-glow"></div>
+            </div>
+
+            <!-- CSS3 -->
+            <div class="skill-box" data-skill="css">
+                <div class="skill-icon">
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+                <h3>CSS3</h3>
+                <div class="skill-glow"></div>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="skill-box" data-skill="javascript">
+                <div class="skill-icon">
+                    <i class="fab fa-js"></i>
+                </div>
+                <h3>JavaScript</h3>
+                <div class="skill-glow"></div>
+            </div>
+
+            <!-- React -->
+            <div class="skill-box" data-skill="react">
+                <div class="skill-icon">
+                    <i class="fab fa-react"></i>
+                </div>
+                <h3>React</h3>
+                <div class="skill-glow"></div>
+            </div>
+
+            <!-- Python -->
+            <div class="skill-box" data-skill="python">
+                <div class="skill-icon">
+                    <i class="fab fa-python"></i>
+                </div>
+                <h3>Python</h3>
+                <div class="skill-glow"></div>
+            </div>
+
+            <!-- C++ -->
+            <div class="skill-box" data-skill="cpp">
+                <div class="skill-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>C / C++</h3>
+                <div class="skill-glow"></div>
+            </div>
+
+            <!-- Git -->
+            <div class="skill-box" data-skill="git">
+                <div class="skill-icon">
+                    <i class="fab fa-git-alt"></i>
+                </div>
+                <h3>Git</h3>
+                <div class="skill-glow"></div>
+            </div>
+
+            <!-- GitHub -->
+            <div class="skill-box" data-skill="github">
+                <div class="skill-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h3>GitHub</h3>
+                <div class="skill-glow"></div>
+            </div>
+
+            <!-- Firebase -->
+            <div class="skill-box" data-skill="firebase">
+                <div class="skill-icon">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <h3>Firebase</h3>
+                <div class="skill-glow"></div>
+            </div>
+
+            <!-- MongoDB -->
+            <div class="skill-box" data-skill="mongodb">
+                <div class="skill-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>MongoDB</h3>
+                <div class="skill-glow"></div>
+            </div>
+
+            <!-- Node.js -->
+            <div class="skill-box" data-skill="nodejs">
+                <div class="skill-icon">
+                    <i class="fab fa-node-js"></i>
+                </div>
+                <h3>Node.js</h3>
+                <div class="skill-glow"></div>
+            </div>
+
+            <!-- Figma -->
+            <div class="skill-box" data-skill="figma">
+                <div class="skill-icon">
+                    <i class="fab fa-figma"></i>
+                </div>
+                <h3>Figma</h3>
+                <div class="skill-glow"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline" id="timeline">
+        <h2 class="heading">The <span>Roadmap</span></h2>
+
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2018 - 2020</div>
+                <div class="timeline-content">
+                    <h3>Secondary School</h3>
+                    <div class="edu-details">
+                        <span class="result"><i class="fas fa-star"></i> GPA: 5.00</span>
+                    </div>
+                    <p>Built a strong foundation in science and mathematics. Started exploring basic programming
+                        concepts.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2020 - 2022</div>
+                <div class="timeline-content">
+                    <h3>Higher Secondary</h3>
+                    <div class="edu-details">
+                        <span class="institute"><i class="fas fa-university"></i> XYZ College</span>
+                        <span class="result"><i class="fas fa-star"></i> GPA: 5.00</span>
+                    </div>
+                    <p>Completed HSC</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2024 - Present</div>
+                <div class="timeline-content">
+                    <h3>B.Sc. in CSE</h3>
+                    <div class="edu-details">
+                        <span class="institute"><i class="fas fa-graduation-cap"></i> International Islamic University
+                            Chittagong</span>
+                        <span class="result"><i class="fas fa-star"></i> CGPA: 3.99</span>
+                    </div>
+                    <p>Currently mastering Data Structures, Algorithms, and Software Development in my 4th Semester.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Future</div>
+                <div class="timeline-content">
+                    <h3>Software Engineer</h3>
+                    <p>Aspiring to become a top-tier Full Stack Developer and problem solver.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2 class="heading">Featured <span>Projects</span></h2>
+
+        <div class="projects-container">
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="assets/profile.png" alt="Project">
+                </div>
+                <div class="project-info">
+                    <h3>Portfolio v3</h3>
+                    <p>A premium personal portfolio</p>
+                    <div class="tags">
+                        <span>HTML</span><span>CSS</span><span>JS</span>
+                    </div>
+                    <a href="#" class="btn-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="assets/profile.png" alt="Project">
+                </div>
+                <div class="project-info">
+                    <h3>CGPA Calculator</h3>
+                    <p>An intuitive tool for students to track their academic performance accurately.</p>
+                    <div class="tags">
+                        <span>C++</span><span>Algorithm</span>
+                    </div>
+                    <a href="#" class="btn-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="assets/profile.png" alt="Project">
+                </div>
+                <div class="project-info">
+                    <h3>Snake Game</h3>
+                    <p>A modern recreation of the classic arcade game using C++ and Graphics.h.</p>
+                    <div class="tags">
+                        <span>C++</span><span>Graphics</span>
+                    </div>
+                    <a href="#" class="btn-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+
+        <div class="contact-container">
+            <div class="contact-form">
+                <form action="#">
+                    <div class="input-box">
+                        <input type="text" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" required="required">
+                        <span>Email</span>
+                    </div>
+                    <div class="input-box">
+                        <textarea required="required"></textarea>
+                        <span>Message</span>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Designed with <i class="fas fa-heart"></i> by Topu</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class="fas fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
